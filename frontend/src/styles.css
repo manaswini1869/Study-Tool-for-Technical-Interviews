@@ -1,0 +1,210 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #0f172a;
+  color: #e5e7eb;
+}
+
+body {
+  margin: 0;
+}
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 960px;
+  background-color: #020617;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem 2rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.app-header {
+  margin-bottom: 1rem;
+}
+
+.app-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.app-subtitle {
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+.form {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #334155;
+  background-color: #020617;
+  color: #e5e7eb;
+  resize: vertical;
+  font-size: 0.95rem;
+}
+
+textarea:focus {
+  outline: 2px solid #3b82f6;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+button {
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, #3b82f6, #22c55e);
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.status-text {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.error-text {
+  font-size: 0.85rem;
+  color: #f97373;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 800px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background-color: #020617;
+  border-radius: 0.9rem;
+  border: 1px solid #1f2937;
+  padding: 1rem 1.2rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #cbd5f5;
+}
+
+.code-block {
+  font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  background-color: #020617;
+  border-radius: 0.6rem;
+  padding: 0.75rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  border: 1px solid #111827;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.quiz-option-btn {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #1f2937;
+  background-color: #020617;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.quiz-option-btn.correct {
+  border-color: #22c55e;
+}
+
+.quiz-option-btn.incorrect {
+  border-color: #ef4444;
+}
+
+.quiz-feedback {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.quiz-feedback.correct {
+  color: #4ade80;
+}
+
+.quiz-feedback.incorrect {
+  color: #fb7185;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.history-item {
+  border-radius: 0.6rem;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #1f2937;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.history-item:hover {
+  background-color: #020617;
+}
+
+.history-prompt {
+  color: #e5e7eb;
+}
+
+.history-time {
+  color: #6b7280;
+  font-size: 0.75rem;
+}

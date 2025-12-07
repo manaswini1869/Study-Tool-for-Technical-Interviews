@@ -1,24 +1,27 @@
-{
-  _id: ObjectId,
-  userId: ObjectId,
-  prompt: string,                // original question
-  answer: {
-    summary: string,
-    explanation: string,
-    examples: string[],
-    complexity: {
-      time: string,
-      space: string,
-    },
-    visuals: string,             // step-by-step / text diagrams
-  },
-  quiz: [
-    {
-      question: string,
-      choices: string[],
-      correctIndex: number,
-      explanation: string,
+import mongoose from "mongoose";
+
+const AnswerSchema = new mongoose.Schema(
+  {
+    explanation: String,
+    steps: [String],
+    codeExample: String,
+    diagram: String,
+    quiz: {
+      question: String,
+      options: [String],
+      correctIndex: Number,
+      explanation: String
     }
-  ],
-  createdAt: Date,
-}
+  },
+  { _id: false }
+);
+
+const QuestionSchema = new mongoose.Schema(
+  {
+    prompt: { type: String, required: true },
+    answer: { type: AnswerSchema, required: true }
+  },
+  { timestamps: true }
+);
+
+export default mongoose.model("Question", QuestionSchema);
